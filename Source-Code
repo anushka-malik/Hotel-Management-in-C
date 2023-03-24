@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 int r_no;
 int r_charge=0,res_charge=0,total_charge=0;
@@ -52,4 +53,3 @@ int main()
      scanf("%s",DOB);
      printf("Number of days:");
      scanf("%d",&days);
-
