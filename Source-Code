@@ -1,3 +1,107 @@
+#include<stdio.h>
+int r_no;
+int r_charge=0,res_charge=0,total_charge=0;
+char name[40], add[50],DOB[30];
+int days;
+int main()
+{  
+   while(1)
+   {
+    printf("*************** Welcome to Hotel AAA *****************");
+    printf("\n\n");
+    printf("\n Enter 1-> for displaying the menu services");
+    printf("\n Enter 2-> for Booking");
+    printf("\n Enter 3-> for Room services");
+    printf("\n Enter 4-> for Restauraunt");
+    printf("\n enter 5-> for Payment");
+    printf("\n Enter 6-> for exit");
+    printf("\n Enter your choice:");
+    int ch;
+    scanf("%d",&ch);
+    if(ch==1)
+       display();
+    else if(ch==2)
+       booking();
+    else if(ch==3)
+      RoomService();
+   else if(ch==4)
+       restauraunt();
+   else if(ch==5)
+     payment();
+   else 
+    break;
+   }
+}
+   void display()
+   {
+      printf("1.) Display\n");
+      printf("2.) Booking\n");
+      printf("3.) Room Services\n");
+      printf("4.) Restauraunt\n");
+      printf("5.) Payment\n");
+      printf("6.) Exit");
+      return ;
+   }
+   void booking()
+   {
+     printf("Name:");
+     scanf("%s",name);
+     printf("Address city:");
+     scanf("%s",add);
+     printf("Date of Birth:");
+     scanf("%s",DOB);
+     printf("Number of days:");
+     scanf("%d",&days);
+     RoomService();
+     int c;
+     printf("Enter your desired room-type:\n");
+     scanf("%d",&c);
+     if(c==1)
+     {
+      r_no=1001;
+      r_charge=(7000*days);
+     }
+     else if(c==2)
+     {
+      r_no=1002;
+      r_charge=(5000*days);
+     }
+     else if(c==3)
+     {
+      r_no=1003;
+      r_charge=(4500*days);
+     }
+     else
+     {
+      r_no=1004;
+      r_charge=(2000*days);
+     }
+     printf("\n Your room number is %d\n",r_no);
+     return ;
+   }
+   void RoomService()
+   {
+     printf("########### Room Services ############\n");
+     printf("(i) 2 Bed AC                   Rs 7000/-day\n");
+     printf("(ii) 2 Bed Non-AC              Rs 5000/-day\n");
+     printf("(iii) Single Bed AC            Rs 4500/-day\n");
+     printf("(iv) Single Bed Non-AC         Rs 2000/-day\n");
+     return ;
+   }
+   void restauraunt()
+   {
+    printf("----------Hotel Services----------");
+    printf("       Breakfast      ");
+    printf("\n1.) Simple Parantha               Rs 30/-piece");
+    printf("\n2.) Aaloo Parantha                Rs 45/-piece");
+    printf("\n3.) Mixed Parantha                Rs 60/-piece");
+    printf("\n4.) Sandwich                      Rs 50/-plate");
+    printf("\n5.) Grilled Sandwich              Rs 80/-plate");
+    printf("\n6.) Bread Pakora                  Rs 65/-plate");
+    printf("\n7.) Dosa                          RS 70/-plate");
+    printf("\n8.) Cold Coffee                   Rs 60/-cup");
+    printf("\n9.) Hot Coffee                    Rs 70/-cup");
+    printf("\n10.) Tea                          Rs 40/-cup");
 
   
     printf("\n              Lunch and Dinner             \n");
