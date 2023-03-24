@@ -1,52 +1,97 @@
-     RoomService();
-     int c;
-     printf("Enter your desired room-type:\n");
-     scanf("%d",&c);
-     if(c==1)
-     {
-      r_no=1001;
-      r_charge=(7000*days);
-     }
-     else if(c==2)
-     {
-      r_no=1002;
-      r_charge=(5000*days);
-     }
-     else if(c==3)
-     {
-      r_no=1003;
-      r_charge=(4500*days);
-     }
-     else
-     {
-      r_no=1004;
-      r_charge=(2000*days);
-     }
-     printf("\n Your room number is %d\n",r_no);
-     return ;
-   }
-   void RoomService()
-   {
-     printf("########### Room Services ############\n");
-     printf("(i) 2 Bed AC                   Rs 7000/-day\n");
-     printf("(ii) 2 Bed Non-AC              Rs 5000/-day\n");
-     printf("(iii) Single Bed AC            Rs 4500/-day\n");
-     printf("(iv) Single Bed Non-AC         Rs 2000/-day\n");
-     return ;
-   }
-   void restauraunt()
-   {
-    printf("----------Hotel Services----------");
-    printf("       Breakfast      ");
-    printf("\n1.) Simple Parantha               Rs 30/-piece");
-    printf("\n2.) Aaloo Parantha                Rs 45/-piece");
-    printf("\n3.) Mixed Parantha                Rs 60/-piece");
-    printf("\n4.) Sandwich                      Rs 50/-plate");
-    printf("\n5.) Grilled Sandwich              Rs 80/-plate");
-    printf("\n6.) Bread Pakora                  Rs 65/-plate");
-    printf("\n7.) Dosa                          RS 70/-plate");
-    printf("\n8.) Cold Coffee                   Rs 60/-cup");
-    printf("\n9.) Hot Coffee                    Rs 70/-cup");
-    printf("\n10.) Tea                          Rs 40/-cup");
+  
     printf("\n              Lunch and Dinner             \n");
-    
+    printf("\n11.) Simple Roti                  Rs 15/-");
+    printf("\n12.) Mixed Roti                   Rs 20/-");
+    printf("\n13.) Rice                         Rs 30/-");
+    printf("\n14.) Dal Makhani                  Rs 45/-");
+    printf("\n15.) Mixed Veg                    Rs 50/-");
+    printf("\n16.) Shahi Paneer                 Rs 60/-");
+    printf("\n17.) Kadhai Paneer                Rs 75/-");
+    printf("\n18.) Ice cream                    RS 45/-");
+    printf("\n19.) Gulab Jamun                  Rs 20/-");
+    printf("\n20.) Rasmalai                     Rs 30/-");
+    int check;
+    printf("\nEnter your allocated room number:");
+    scanf("%d",&check);
+    if(check ==r_no)
+    {
+      int no;
+      printf("Enter number of items you want to purchase:");
+      scanf("%d",&no);
+      int i=1;
+      while(i<=no)
+      {
+        int p;
+        printf("Enter the item number:");
+        scanf("%d",&p);
+        if(p==1)
+         res_charge+=30;
+        else if(p==2)
+         res_charge+=45;
+        else if(p==3)
+         res_charge+=60;
+        else if(p==4)
+         res_charge+=50;
+        else if(p==5)
+         res_charge+=80;
+        else if(p==6)
+         res_charge+=65;
+        else if(p==7)
+         res_charge+=70;
+        else if(p==8)
+         res_charge+=60;
+        else if(p==8)
+         res_charge+=60;
+        else if(p==9)
+         res_charge+=70;
+        else if(p==10)
+         res_charge+=40;
+        else if(p==11)
+         res_charge+=15;
+        else if(p==12)
+         res_charge+=20;
+        else if(p==13)
+         res_charge+=30;
+        else if(p==14)
+         res_charge+=45;
+        else if(p==15)
+         res_charge+=50;
+        else if(p==16)
+         res_charge+=60;
+        else if(p==17)
+         res_charge+=75;
+        else if(p==18)
+         res_charge+=45;
+        else if(p==19)
+         res_charge+=20;
+        else 
+         res_charge+=30;
+      i++;
+      }
+    }
+    return ;
+   }
+   void payment()
+   {
+      int x;
+      printf("Enter your room number:");
+      scanf("%d",&x);
+      if(x==r_no)
+       {
+        printf("User name           :%s\n",name);
+        printf("Address             :%s\n",add);
+        printf("Date of birth       :%s\n",DOB);
+        printf("Room Charges        :%d\n",r_charge);
+        printf("Restauraunt charges :%d\n",res_charge);
+        printf("\n");
+        total_charge=r_charge+res_charge;
+        printf("Amount to be paid   :%d",total_charge);
+        printf("\n Thanks for your visit\n");
+        return ;
+       }
+       else 
+       {
+         printf("You have not availed any hotel services");
+         return ;
+       }
+   }
