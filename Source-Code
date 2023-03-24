@@ -1,55 +1,99 @@
 
-#include<stdio.h>
-int r_no;
-int r_charge=0,res_charge=0,total_charge=0;
-char name[40], add[50],DOB[30];
-int days;
-int main()
-{  
-   while(1)
-   {
-    printf("*************** Welcome to Hotel AAA *****************");
-    printf("\n\n");
-    printf("\n Enter 1-> for displaying the menu services");
-    printf("\n Enter 2-> for Booking");
-    printf("\n Enter 3-> for Room services");
-    printf("\n Enter 4-> for Restauraunt");
-    printf("\n enter 5-> for Payment");
-    printf("\n Enter 6-> for exit");
-    printf("\n Enter your choice:");
-    int ch;
-    scanf("%d",&ch);
-    if(ch==1)
-       display();
-    else if(ch==2)
-       booking();
-    else if(ch==3)
-      RoomService();
-   else if(ch==4)
-       restauraunt();
-   else if(ch==5)
-     payment();
-   else 
-    break;
+  
+    printf("\n              Lunch and Dinner             \n");
+    printf("\n11.) Simple Roti                  Rs 15/-");
+    printf("\n12.) Mixed Roti                   Rs 20/-");
+    printf("\n13.) Rice                         Rs 30/-");
+    printf("\n14.) Dal Makhani                  Rs 45/-");
+    printf("\n15.) Mixed Veg                    Rs 50/-");
+    printf("\n16.) Shahi Paneer                 Rs 60/-");
+    printf("\n17.) Kadhai Paneer                Rs 75/-");
+    printf("\n18.) Ice cream                    RS 45/-");
+    printf("\n19.) Gulab Jamun                  Rs 20/-");
+    printf("\n20.) Rasmalai                     Rs 30/-");
+    int check;
+    printf("\nEnter your allocated room number:");
+    scanf("%d",&check);
+    if(check ==r_no)
+    {
+      int no;
+      printf("Enter number of items you want to purchase:");
+      scanf("%d",&no);
+      int i=1;
+      while(i<=no)
+      {
+        int p;
+        printf("Enter the item number:");
+        scanf("%d",&p);
+        if(p==1)
+         res_charge+=30;
+        else if(p==2)
+         res_charge+=45;
+        else if(p==3)
+         res_charge+=60;
+        else if(p==4)
+         res_charge+=50;
+        else if(p==5)
+         res_charge+=80;
+        else if(p==6)
+         res_charge+=65;
+        else if(p==7)
+         res_charge+=70;
+        else if(p==8)
+         res_charge+=60;
+        else if(p==8)
+         res_charge+=60;
+        else if(p==9)
+         res_charge+=70;
+        else if(p==10)
+         res_charge+=40;
+        else if(p==11)
+         res_charge+=15;
+        else if(p==12)
+         res_charge+=20;
+        else if(p==13)
+         res_charge+=30;
+        else if(p==14)
+         res_charge+=45;
+        else if(p==15)
+         res_charge+=50;
+        else if(p==16)
+         res_charge+=60;
+        else if(p==17)
+         res_charge+=75;
+        else if(p==18)
+         res_charge+=45;
+        else if(p==19)
+         res_charge+=20;
+        else 
+         res_charge+=30;
+      i++;
+      }
+    }
+    return ;
    }
-}
-   void display()
+   void payment()
    {
-      printf("1.) Display\n");
-      printf("2.) Booking\n");
-      printf("3.) Room Services\n");
-      printf("4.) Restauraunt\n");
-      printf("5.) Payment\n");
-      printf("6.) Exit");
-      return ;
+      int x;
+      printf("Enter your room number:");
+      scanf("%d",&x);
+      if(x==r_no)
+       {
+        printf("User name           :%s\n",name);
+        printf("Address             :%s\n",add);
+        printf("Date of birth       :%s\n",DOB);
+        printf("Room Charges        :%d\n",r_charge);
+        printf("Restauraunt charges :%d\n",res_charge);
+        printf("\n");
+        total_charge=r_charge+res_charge;
+        printf("Amount to be paid   :%d",total_charge);
+        printf("\n Thanks for your visit\n");
+        return ;
+       }
+       else 
+       {
+         printf("You have not availed any hotel services");
+         return ;
+       }
    }
-   void booking()
-   {
-     printf("Name:");
-     scanf("%s",name);
-     printf("Address city:");
-     scanf("%s",add);
-     printf("Date of Birth:");
-     scanf("%s",DOB);
-     printf("Number of days:");
-     scanf("%d",&days);
+
