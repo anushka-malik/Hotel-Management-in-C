@@ -1,1 +1,55 @@
-     
+
+#include<stdio.h>
+int r_no;
+int r_charge=0,res_charge=0,total_charge=0;
+char name[40], add[50],DOB[30];
+int days;
+int main()
+{  
+   while(1)
+   {
+    printf("*************** Welcome to Hotel AAA *****************");
+    printf("\n\n");
+    printf("\n Enter 1-> for displaying the menu services");
+    printf("\n Enter 2-> for Booking");
+    printf("\n Enter 3-> for Room services");
+    printf("\n Enter 4-> for Restauraunt");
+    printf("\n enter 5-> for Payment");
+    printf("\n Enter 6-> for exit");
+    printf("\n Enter your choice:");
+    int ch;
+    scanf("%d",&ch);
+    if(ch==1)
+       display();
+    else if(ch==2)
+       booking();
+    else if(ch==3)
+      RoomService();
+   else if(ch==4)
+       restauraunt();
+   else if(ch==5)
+     payment();
+   else 
+    break;
+   }
+}
+   void display()
+   {
+      printf("1.) Display\n");
+      printf("2.) Booking\n");
+      printf("3.) Room Services\n");
+      printf("4.) Restauraunt\n");
+      printf("5.) Payment\n");
+      printf("6.) Exit");
+      return ;
+   }
+   void booking()
+   {
+     printf("Name:");
+     scanf("%s",name);
+     printf("Address city:");
+     scanf("%s",add);
+     printf("Date of Birth:");
+     scanf("%s",DOB);
+     printf("Number of days:");
+     scanf("%d",&days);
